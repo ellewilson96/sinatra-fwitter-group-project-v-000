@@ -20,7 +20,7 @@ class UsersController < ApplicationController
      session[:user_id] = @user.id
      redirect '/tweets/tweets'
    end
-   redirect '/sessions/login'
+   redirect '/users/login'
  end
 
  get '/sessions/logout' do
