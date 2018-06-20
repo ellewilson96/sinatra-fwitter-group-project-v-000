@@ -10,4 +10,8 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  get '/signup' do 
+    redirect to '/tweets'
+  end
 end
