@@ -30,9 +30,13 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id' do
+    @tweet = Tweet.find(params[:id])
+    @tweet.update(params["tweet"])
+    if !params["user"]["username"].empty?
+      @tweet.user = User.create(username: params["user"]["username"])
+    end
+    @tweet.save
+    redirect "tweets/#{@tweet.id}"
   end
 
-  post '/tweets/:id/delete' do
-    erb :delete
-  end
 end
