@@ -19,6 +19,7 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/:id/edit' do
+    @tweet = Tweer.find(params[:id])
     erb :edit_tweet
   end
 
