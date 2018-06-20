@@ -7,7 +7,7 @@ class UsersController < ApplicationController
  post '/users' do
    @user = User.find_by(email: params[:email])
    session[:user_id] = @user.id
-   redirect '/users/home'
+   redirect '/users'
  end
 
  get '/sessions/login' do
