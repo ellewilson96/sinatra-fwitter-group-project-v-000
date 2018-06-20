@@ -7,7 +7,7 @@ class UsersController < ApplicationController
  post '/users' do
    @user = User.find_by(email: params[:email])
    session[:user_id] = @user.id
-   redirect '/'
+   redirect '/tweets/tweets'
  end
 
  get '/sessions/login' do
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
    @user = User.find_by(email: params[:email], password: params[:password])
    if @user
      session[:user_id] = @user.id
-     redirect '/tweets'
+     redirect '/tweets/tweets'
    end
    redirect '/sessions/login'
  end
