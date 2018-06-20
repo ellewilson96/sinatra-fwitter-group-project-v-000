@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  get '/users/create_user' do
+  get '/users/signup' do
     erb :signup
   end
 
-  post '/users/create_user' do
+  post '/users/signup' do
   end
 
 
