@@ -11,6 +11,12 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
+    @tweet = Tweet.create(params[:tweet])
+    if !params["user"]["username"].empty?
+      @tweet.user = User.create(username: params["user"]["username"])
+    end
+    @tweet.save
+    redirect "users/#{@user.id}"
   end
 
   get '/tweets/:id' do
