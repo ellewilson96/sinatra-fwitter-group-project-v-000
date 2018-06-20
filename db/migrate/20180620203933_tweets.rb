@@ -3,5 +3,6 @@ class Tweets < ActiveRecord::Migration
     create_table :tweets do |t|
       t.string :content
       t.integer :user_id
+    end
   end
 end
