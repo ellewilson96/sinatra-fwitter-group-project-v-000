@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/new' do
-    @tweet = Tweet.new(params[:id])
+    @tweet = Tweet.all
     erb :create_tweet
   end
 
