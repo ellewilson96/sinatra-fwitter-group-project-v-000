@@ -22,5 +22,8 @@ class TweetsController < ApplicationController
 
   post '/tweets/:id' do
   end
-  
+
+  post '/tweets/:id/delete' do 
+    erb :delete
+  end
 end
