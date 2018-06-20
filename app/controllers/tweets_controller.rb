@@ -11,9 +11,10 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    
+
 
   get '/tweets/:id' do
+    @tweet = Tweet.find(params[:id])
     erb :show_tweet
   end
 
