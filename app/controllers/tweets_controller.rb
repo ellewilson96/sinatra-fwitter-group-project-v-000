@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
 
   get '/tweets/new' do
     @users = User.all
-    erb :create_tweet
+    erb :'/tweets/create_tweet'
   end
 
   post '/tweets' do
@@ -21,12 +21,12 @@ class TweetsController < ApplicationController
 
   get '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
-    erb :show_tweet
+    erb :'/tweets/show_tweet'
   end
 
   get '/tweets/:id/edit' do
     @tweet = Tweer.find(params[:id])
-    erb :edit_tweet
+    erb :'/tweets/edit_tweet'
   end
 
   post '/tweets/:id' do
