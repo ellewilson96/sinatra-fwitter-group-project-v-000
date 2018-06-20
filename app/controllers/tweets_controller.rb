@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
 
   get '/tweets' do
+    @tweets = Tweet.all
     erb :'/tweets/index'
   end
 
@@ -23,7 +24,7 @@ class TweetsController < ApplicationController
   post '/tweets/:id' do
   end
 
-  post '/tweets/:id/delete' do 
+  post '/tweets/:id/delete' do
     erb :delete
   end
 end
